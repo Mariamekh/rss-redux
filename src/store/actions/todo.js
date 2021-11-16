@@ -21,6 +21,7 @@ export const fetchTodos = (page = 1, limit = 10) => {
     }
   };
 };
+
 export function setTodoPage(page) {
   return { type: "SET_TODO_PAGE", payload: page };
 }

@@ -12,7 +12,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className='App'>
       <UserList />
       <hr />
       <TodoList />

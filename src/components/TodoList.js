@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {fetchTodos, setTodoPage} from "../store/actions/todo";
+import { fetchTodos, setTodoPage } from "../store/actions/todo";
 
-const TodoList= () => {
+const TodoList = () => {
   const { page, error, loading, todos, limit } = useSelector(
     (state) => state.todo
   );
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-   const pages = [1, 2, 3, 4, 5];
+  const pages = [1, 2, 3, 4, 5];
 
   useEffect(() => {
     dispatch(fetchTodos(page, limit));

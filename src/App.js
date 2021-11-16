@@ -1,31 +1,25 @@
 import React from "react";
 import UserList from "./components/UserList";
 import TodoList from "./components/TodoList";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  incrementCreator,
-  decrementCreator,
-} from "./store/reducers/countReducer";
 import "./App.css";
-const App = () => {
-  const count = useSelector((state) => state.countReducer.count);
-  const dispatch = useDispatch();
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Counter from "./components/Counter";
+import NotFound from "./components/NotFound";
 
+const App = () => {
   return (
-    <div className='App'>
-      <UserList />
-      <hr />
-      <TodoList />
-      <div className='count'>{count}</div>
-      <div className='btns'>
-        <button className='btn' onClick={() => dispatch(incrementCreator())}>
-          INCREMENT++
-        </button>
-        <button className='btn' onClick={() => dispatch(decrementCreator())}>
-          DECREMENT--
-        </button>
+    <BrowserRouter>
+      <div className='App'>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Counter />} />
+          <Route path='/user' element={<UserList />} />
+          <Route path='/todo' element={<TodoList />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 };
 

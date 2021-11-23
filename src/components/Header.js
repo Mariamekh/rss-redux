@@ -7,7 +7,7 @@ const Header = () => {
       <nav>
         <ul style={{ display: "flex", justifyContent: "center" }}>
           <li style={{ listStyle: "none", paddingRight: "50px" }}>
-            <NavLink to='/'>Counter</NavLink>
+            <Link to='/'>Counter</Link>
           </li>
           <li style={{ listStyle: "none", paddingRight: "50px" }}>
             <Link to='/user'>User List</Link>

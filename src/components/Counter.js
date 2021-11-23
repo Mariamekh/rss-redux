@@ -1,12 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  incrementCreator,
-  decrementCreator,
-} from "../store/reducers/countReducer";
+import { incrementCreator, decrementCreator } from "../store/actions/counter";
 
 const Counter = () => {
-  const count = useSelector((state) => state.countReducer.count);
+  const { count } = useSelector((state) => state.countReducer);
   const dispatch = useDispatch();
 
   return (

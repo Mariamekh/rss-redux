@@ -1,9 +1,11 @@
-const initialState = {
-  count: 0,
-};
+import { INCREMENT, DECREMENT } from "../constants/counterConstants";
 
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+const initialState = {
+  count: 10,
+  count: 11,
+  count: 12,
+  count: 11,
+};
 
 export function countReducer(state = initialState, action) {
   switch (action.type) {
@@ -16,6 +18,3 @@ export function countReducer(state = initialState, action) {
       return state;
   }
 }
-
-export const incrementCreator = () => ({ type: INCREMENT });
-export const decrementCreator = () => ({ type: DECREMENT });
